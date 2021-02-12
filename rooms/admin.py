@@ -36,6 +36,7 @@ class RoomdAdmin(admin.ModelAdmin):
                     "name",
                     "description",
                     "country",
+                    "city",
                     "address",
                     "price",
                 ),
@@ -89,7 +90,7 @@ class RoomdAdmin(admin.ModelAdmin):
         "guests",
         "beds",
         "bedrooms",
-        "baths",
+        # "baths",
         "check_in",
         "check_out",
         "instant_book",
@@ -121,6 +122,10 @@ class RoomdAdmin(admin.ModelAdmin):
         "facilities",
         "house_rules",
     )
+
+    def save_model(self, request, obj, form, change):
+        print("Model Change :", change)
+        super().save_model(request, obj, form, change)
 
     def count_amenities(self, obj):
         return obj.amenities.count()
