@@ -1,27 +1,25 @@
 import random
 from django.core.management.base import BaseCommand
-<<<<<<< HEAD
 from django.contrib.admin.utils import flatten
-=======
->>>>>>> 8e2df5f10fc0074bdbb966aa21527d12902bb1f8
 from django_seed import Seed
-from rooms import models as room_models
 from users import models as user_models
+from rooms import models as room_models
 
 
 class Command(BaseCommand):
 
-    help = "This command creates many rooms"
+    help = "This command creates rooms"
 
     def add_arguments(self, parser):
         parser.add_argument(
             "--number",
             default=1,
             type=int,
-            help="How many rooms do you wnat to create?",
+            help="How many rooms do you want to create",
         )
 
     def handle(self, *args, **options):
+
         number = int(options.get("number"))
         seeder = Seed.seeder()
         all_users = user_models.User.objects.all()
@@ -34,24 +32,21 @@ class Command(BaseCommand):
                 "host": lambda x: random.choice(all_users),
                 "room_type": lambda x: random.choice(room_types),
                 "guests": lambda x: random.randint(1, 20),
-                "price": lambda x: random.randint(1000, 700000),
-                "beds": lambda x: random.randint(1, 3),
+                "price": lambda x: random.randint(1000, 800000),
+                "beds": lambda x: random.randint(0, 5),
                 "bedrooms": lambda x: random.randint(1, 5),
-                "baths": lambda x: random.randint(1, 3),
+                "baths": lambda x: random.randint(1, 5),
             },
         )
-<<<<<<< HEAD
-        created_photos = seeder.execute()  # 몇번 방인지 Primary Key return
+        created_photos = seeder.execute()
         created_clean = flatten(created_photos.values())
         for pk in created_clean:
             room = room_models.Room.objects.get(pk=pk)
-            for i in range(3, random.randint(10, 16)):
+
+            for i in range(3, random.randint(10, 17)):
                 room_models.Photo.objects.create(
                     caption=seeder.faker.sentence(),
                     room=room,
-                    file=f"room_photos/{random.randint(1,31)}.webp",
+                    file=f"room_photos/{random.randint(1, 31)}.webp",
                 )
-=======
-        seeder.execute()
->>>>>>> 8e2df5f10fc0074bdbb966aa21527d12902bb1f8
         self.stdout.write(self.style.SUCCESS(f"{number} rooms created!"))
