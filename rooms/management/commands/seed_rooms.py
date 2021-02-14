@@ -47,5 +47,4 @@ class Command(BaseCommand):
                     room=room,
                     file=f"room_photos/{random.randint(1,31)}.webp",
                 )
-
         self.stdout.write(self.style.SUCCESS(f"{number} rooms created!"))
