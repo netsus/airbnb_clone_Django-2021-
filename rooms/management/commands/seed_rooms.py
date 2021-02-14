@@ -40,13 +40,28 @@ class Command(BaseCommand):
         )
         created_photos = seeder.execute()
         created_clean = flatten(created_photos.values())
-        for pk in created_clean:
-            room = room_models.Room.objects.get(pk=pk)
-
-            for i in range(3, random.randint(10, 17)):
+        amenities = room_models.Amenity.objects.all()
+        facilities = room_models.Facility.objects.all()
+        rules = room_models.HouseRule.objects.all()
+        for pk in created_clean:  # 방 여러개 반복 -> pk 하나가 방 1개
+            room_object = room_models.Room.objects.get(pk=pk)
+            for i in range(3, random.randint(10, 30)):
                 room_models.Photo.objects.create(
                     caption=seeder.faker.sentence(),
-                    room=room,
+                    room=room_object,
                     file=f"room_photos/{random.randint(1, 31)}.webp",
                 )
+            for a in amenities:  # ManytoMany Filed일때 추가하는 방법
+                magic_number = random.randint(0, 15)
+                if magic_number % 2 == 0:
+                    room_object.amenities.add(a)
+            for f in facilities:
+                magic_number = random.randint(0, 15)
+                if magic_number % 2 == 0:
+                    room_object.facilities.add(f)
+            for r in rules:
+                magic_number = random.randint(0, 15)
+                if magic_number % 2 == 0:
+                    room_object.house_rules.add(r)
+
         self.stdout.write(self.style.SUCCESS(f"{number} rooms created!"))
