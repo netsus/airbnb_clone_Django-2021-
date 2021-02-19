@@ -15,3 +15,10 @@ Django는 Framework이기 때문에 폴더이름과 코드의 이름을 바꾸�
 apps.py는 configuration 파일
 models.py는 Database가 어떻게 생겼는지 설명하는 곳
 views.py가 사용자들이 보게될 기능 만드는 곳.
+
+#11.0 HomeView
+view를 만드는 3가지 방법
+1) python only
+2) python + django
+3) django magic (almost no coding)
+3가지를 하는 이유 django가 백그라운드에서 어떻게 돌아가는지 이해하기 위해서
