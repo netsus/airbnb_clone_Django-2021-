@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# 각 앱의 urls.py파일을 등록하는 곳
 urlpatterns = [
     path("", include("core.urls", namespace="core")),
-    path("admin/", admin.site.urls),
+    path("rooms/", include("rooms.urls", namespace="rooms")),
+    path("admin/", admin.site.urls),  # 장고의 admin 페이지 등록
 ]
 
 if settings.DEBUG:
