@@ -31,8 +31,6 @@ Page {{page_obj.number}}/{{page_obj.paginator.num_pages}}
 {% endif %}
 </h5>
 
-
-
 {% for page in page_obj.paginator.page_range %}
     <a href="?page={{page}}">{{page}}</a>
 {% endfor %}
