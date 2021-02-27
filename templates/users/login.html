@@ -8,6 +8,11 @@ Login
 {% endblock search-bar %}
 
 {% block content %}
-    Hello Login!
+    <form method="POST" action="{% url "users:login" %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Login</button>
+</form>
+
 {% endblock content %}
 
