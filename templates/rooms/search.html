@@ -18,6 +18,27 @@ Search
     {{room.name}}
     <br>
     {% endfor %}
+
+    {% comment %} Pagenator {% endcomment %}
+    {% load my_tags %}
+    {% if rooms.has_previous %}
+        {% comment %} <a href="?{% param_replace page=1 %}">First</a> {% endcomment %}
+        {% if rooms.previous_page_number != 1 %}
+        <a href="?{% param_replace page=rooms.previous_page_number %}">Previous</a>
+        {% endif %}
+    {% endif %}
+
+    Page {{ rooms.number }} of {{ rooms.paginator.num_pages }}
+
+    {% if rooms.has_next %}
+        {% if rooms.next_page_number != rooms.paginator.num_pages %}
+        <a href="?{% param_replace page=rooms.next_page_number %}">Next</a>
+        {% endif %}
+        {% comment %} <a href="?{% param_replace page=rooms.paginator.num_pages %}">Last</a> {% endcomment %}
+    {% endif %}
+
+    <p>Objects {{ rooms.start_index }}—{{ rooms.end_index }}</p>
+    
     <hr>
 {% endblock content %}
 
