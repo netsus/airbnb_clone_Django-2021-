@@ -71,6 +71,7 @@ class RoomdAdmin(admin.ModelAdmin):
                     "beds",
                     "bedrooms",
                     "baths",
+                    "room_type",
                 )
             },
         ),
