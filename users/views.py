@@ -88,7 +88,7 @@ def github_callback(request):
                 headers={"Accept": "application/json"},
             )
             result_json = result.json()
-            print(result_json)
+            # print(result_json)
             error = result_json.get("error", None)
             if error is not None:
                 raise GithubException()
@@ -102,12 +102,31 @@ def github_callback(request):
                     },
                 )
                 profile_json = profile_request.json()
+                # print(profile_json)
                 username = profile_json.get("login", None)
                 if username is not None:
                     name = profile_json.get("name")
+                    name = username if name is None else name
                     email = profile_json.get("email")
                     bio = profile_json.get("bio")
-                    user = models.User.objects.get(email=email)
+                    bio = "" if bio is None else bio
+                    try:  # 우리 DB안에 있는 user라면
+                        user = models.User.objects.get(email=email)
+                        if user.login_method != models.User.LOGIN_GH:
+                            # github가 아닌 다른 method로 이미 회원가입되어있는 상황
+                            raise GithubException()
+                    except models.User.DoesNotExist:  # 우리 DB에 없는 신규 유저라면
+                        user = models.User.objects.create(
+                            email=email,
+                            first_name=name,
+                            username=email,
+                            bio=bio,
+                            login_method=models.User.LOGIN_GH,
+                        )
+                        user.set_unusable_password()
+                        user.save()
+                    login(request, user)
+                    return redirect(reverse("core:home"))
                 else:
                     raise GithubException()
         else:
