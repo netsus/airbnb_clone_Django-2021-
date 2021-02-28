@@ -46,6 +46,10 @@ class SignUpForm(forms.ModelForm):
         email = self.cleaned_data.get("email")
         user.username = email
         password = self.cleaned_data.get("password")
-        print(password)
+        # print(password)
         user.set_password(password)
-        user.save()
+        try:
+            models.User.objects.get(email=email)
+            raise forms.ValidationError("User already exists.")
+        except models.User.DoesNotExist:
+            user.save()
