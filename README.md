@@ -22,3 +22,13 @@ view를 만드는 3가지 방법
 2) python + django
 3) django magic (almost no coding)
 3가지를 하는 이유 django가 백그라운드에서 어떻게 돌아가는지 이해하기 위해서
+
+
+#19.0 Intro to TailwindCSS
+https://tailwindcss.com/
+Tailwindcss : class 이름으로써 css를 쉽게 적용할 수 있게해주는 Framework
+코드의 재사용은 @apply를 이용해서 원하는 클래스에 모두 적용되도록 할 수 있다.
+장점
+1. 이미 완성된 style 제공
+2. Tailwind color palette 제공
+3. Tailwind는 내가 모두 디자인할 수 있기 때문에 Tailwind로 제작된 웹사이트들은 천차만별. bootstrap이나 foundation은 어느정도 사이트들이 비슷해보인다는 한계가 존재.
