@@ -8,7 +8,6 @@ airbnb 숙소(rooms)보기 -> room 폴더에 넣을 function 계획
 rooms app: 숙소 생성, 검색, 삭제, 수정, 디테일페이지 보여주기, 모든 room 보여주기
 app 폴더를 크게만들면 안된다. -> 주로 생성, 검색, 삭제, 수정 기능을 메인으로하는 app들을 생성
 -> 한 문장으로 app을 표현할 수 있는 정도. (주요 기능 정의에 있어서 and 들어가면 별개의 app으로 빼는게 좋다.)
-
 #2.7 Explaining the Apps
 
 Django는 Framework이기 때문에 폴더이름과 코드의 이름을 바꾸면안된다.
@@ -32,3 +31,18 @@ Tailwindcss : class 이름으로써 css를 쉽게 적용할 수 있게해주는 
 1. 이미 완성된 style 제공
 2. Tailwind color palette 제공
 3. Tailwind는 내가 모두 디자인할 수 있기 때문에 Tailwind로 제작된 웹사이트들은 천차만별. bootstrap이나 foundation은 어느정도 사이트들이 비슷해보인다는 한계가 존재.
+
+#19.1 Setting Up TailwindCSS with Gulp
+1. npm 업데이트
+sudo npm install -g npm
+2. gulp, sass 개발자 모드(-D) 설치
+npm i gulp gulp-postcss gulp-sass gulp-csso node-sass -D 
+3. tailwindcss 개발자 모드(-D) 설치
+npm install tailwindcss -D   
+4. tailwind init
+npx tailwind init  
+5. gulpfile.js 작성
+6. autoprefixer 설치
+npm i autoprefixer  
+7. scss파일을 css파일로 변환(위치는 static/css 폴더) 
+npm run css  

@@ -1,0 +1,25 @@
+{
+  "name": "airbnb-clone",
+  "version": "1.0.0",
+  "description": "Cloning Airbnb using Python, Django, Tailwind CSS and more... in WSL2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netsus/airbnb_clone_Django-2021-.git"
+  },
+  "scripts":{
+    "css":"gulp"
+  },
+  "homepage": "https://github.com/netsus/airbnb_clone_Django-2021-#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-install": "^1.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "tailwindcss": "^2.0.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4"
+  }
+}
