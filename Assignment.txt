@@ -1,0 +1,23 @@
+Assignment2 : User 모델과 admin 구축.
+1. 목표 & 수행
+    1) 모델: Bio, Preference, Language, Favourite Book Genre, Favourite Movie Genre 구축
+    2) admin: model을 register하고, list_display, list_filter, fieldsets 설정
+2. Link
+    1) Our link : https://repl.it/@guswn2521/2ndAssignmentBoilerplate-2#users/admin.py
+    2) Answer : https://repl.it/@guswn2521/DelightfulEvilCamel-1#users/models.py
+
+Assignment 3 : 
+
+Assignment 7 : 
+1. 목표
+    1) Commands로 Seeder 사용하여 Fake db 생성
+
+Answer : https://repl.it/@guswn2521/SecretTightLevel-4#.replit    
+
+* fav commands에서 onetoone field seed 적용방법
+
+fav_list.movies.set(choices(movies))
+fav_list.books.set(choices(books))
+
+Assignment 9
+Detail View, Create View, Update View 생성하기
