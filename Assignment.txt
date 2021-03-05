@@ -21,3 +21,13 @@ fav_list.books.set(choices(books))
 
 Assignment 9
 Detail View, Create View, Update View 생성하기
+
+Assignment 10
+log in, log out, sign Update
+
+Assignment 11
+Based on the videos from #21.3 to #21.7:
+
+1. Make a user profile page
+2. Make an update profile page.
+3. Make a change password page.
