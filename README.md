@@ -45,4 +45,5 @@ npx tailwind init
 6. autoprefixer 설치
 npm i autoprefixer  
 7. scss파일을 css파일로 변환(위치는 static/css 폴더) 
+npm i 
 npm run css  

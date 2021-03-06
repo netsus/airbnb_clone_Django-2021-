@@ -6,8 +6,8 @@
     "type": "git",
     "url": "git+https://github.com/netsus/airbnb_clone_Django-2021-.git"
   },
-  "scripts":{
-    "css":"gulp"
+  "scripts": {
+    "css": "gulp"
   },
   "homepage": "https://github.com/netsus/airbnb_clone_Django-2021-#readme",
   "devDependencies": {
