@@ -47,3 +47,11 @@ npm i autoprefixer
 7. scss파일을 css파일로 변환(위치는 static/css 폴더) 
 npm i 
 npm run css  
+
+#19.3 Setup Explanation part Two
+1. styles.scss - css 편집과 관련된 모든것은 scss로 진행
+2. gulpfile.js
+ --> gulp - scss를 css로 변환
+1) postCSS 단계: @tailwind, @apply 등을 css로 변환,
+2) 브라우저에 보내는 파일은 static/css/styles.css
+ --> npm run css : scss에서 작성한 코드를 css로 바꿔주는 명령어
