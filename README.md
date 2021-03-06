@@ -55,3 +55,10 @@ npm run css
 1) postCSS 단계: @tailwind, @apply 등을 css로 변환,
 2) 브라우저에 보내는 파일은 static/css/styles.css
  --> npm run css : scss에서 작성한 코드를 css로 바꿔주는 명령어
+
+ #20.0 Sizes in Tailwind
+1. CSS 기초 유닛
+em : 현재 태그에 적용되고 있는 font-size의 배수.
+ex) 가장 가까운 부모의 font-size가 10px이고 em=1 이면, 10px  의미. em=2 이면, 20px의미.
+rem : root에 적용되고 있는 font-size의 배수.
+ex) html에 적용되는 font-size가 10px이고, em=3이면, 30px의미.
