@@ -31,3 +31,23 @@ Based on the videos from #21.3 to #21.7:
 1. Make a user profile page
 2. Make an update profile page.
 3. Make a change password page.
+--> user 프로필 페이지 만들고, 업데이트가능하게 그리고 비밀번호 수정 가능하게 하기.
+
+Assignment 12
+Based on the videos #20.1 and #20.12 add mixins to your templates, we are doing this today so we can add the styles tomorrow.
+
+These are the mixins you have to make:
+- Book
+- Movie
+- Person
+- Form (to use in ALL the forms)
+
+These are the partials you have to make:
+- Header
+- Footer
+
+As a second task:
+- Create a /search view that shows all the categories and has a search bar.
+- The search doesn't have to work, just make the URL and the GET view.
+
+--> mixins 4개 만들기 // partials에서 헤더, 푸터 만들기 // /search 페이지에 서치만들기
