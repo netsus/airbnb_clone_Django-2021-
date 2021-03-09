@@ -51,3 +51,7 @@ As a second task:
 - The search doesn't have to work, just make the URL and the GET view.
 
 --> mixins 4개 만들기 // partials에서 헤더, 푸터 만들기 // /search 페이지에 서치만들기
+진행과정
+ 1) book, movie, person에 대해 list.html에서 각 항목의 카드를 볼 수 있도록 mixin폴더내에 _card.html 생성 및 include
+ 2) Header, Footer 분리하여 templates/partials 폴더에 저장
+ 3) core에서 /search 가능하게 forms.py, views.py 코드 작성 -> urls.py 등록 -> HTML 작성 (form.as_p 사용)
