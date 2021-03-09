@@ -55,3 +55,12 @@ As a second task:
  1) book, movie, person에 대해 list.html에서 각 항목의 카드를 볼 수 있도록 mixin폴더내에 _card.html 생성 및 include
  2) Header, Footer 분리하여 templates/partials 폴더에 저장
  3) core에서 /search 가능하게 forms.py, views.py 코드 작성 -> urls.py 등록 -> HTML 작성 (form.as_p 사용)
+ 
+
+ Assignment 13
+Today is time to make everything beautiful!
+Using Tailwind CSS make your website look as good as you can!
+Tailwind is on the blueprint so you can start adding class names immediatly.
+Don't create any .css file, use only Tailwind class names
+Because we are not using Gulp, we can't use @apply** **
+--> tailwind css를 이용해서 전반적으로 꾸미기
