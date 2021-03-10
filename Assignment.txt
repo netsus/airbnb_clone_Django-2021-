@@ -64,3 +64,21 @@ Tailwind is on the blueprint so you can start adding class names immediatly.
 Don't create any .css file, use only Tailwind class names
 Because we are not using Gulp, we can't use @apply** **
 --> tailwind css를 이용해서 전반적으로 꾸미기
+
+ Assignment 14
+The design of today's blueprint is from miranaky! Great work! Congrats!
+This lesson is not based on any videos, time to practice!
+Using the provided blueprint complete the following tasks:
+
+1) Using Tailwind, finish the pages:
+User Profile
+Movie Detail
+Book Detail
+Person Detail
+
+2) Make a new Category Detail page that shows the movies and books that a category has, the URL should be /category/<int:pk>, use Tailwind as well.
+
+3) Complete the /search view and search for a movie, book or person when the user submits the search bar.
+--> 1) Tailwind css를 이용해서 User Profile, Movie Detail, Book Detail, Person Detail
+    2) 
+    3)
