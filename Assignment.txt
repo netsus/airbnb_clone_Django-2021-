@@ -92,3 +92,16 @@ The user should be logged in to perform this action.
 If the user has no fav list the view should create one.
 On the movie and book template mixin make a button to add them to the user's fav list.
 Make a template tag to show if a book or movie is already on the fav list.
+--> 
+1) user가 로그인했을 때, 찜목록 만들 수 있게하기 (찜목록: fav_list)
+2) 찜목록 추가하면, Add Favorite 버튼이 Remove Favorite으로 바뀌게 하기
+3) book or movie에 적용하기
+
+Last Assignment
+As a final project we will build the reviews feature!
+
+Allow users to leave reviews on books and movies (You will have to create a url, view and form).
+Allow users to delete their reviews. When you are done, deploy your project to Elastic Beanstalk using the videos from the section #26 and submit the link.
+--> 
+1) book과 movie에 대해 리뷰 남기고 삭제가능한 기능 만들기
+2) Elastic Beanstalk에 deploy 하기
