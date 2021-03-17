@@ -4,39 +4,38 @@ Home
 {% endblock page_title %}
 
 {% block content %}
+<div class="container mx-auto">
 
-    <div class="container rounded-xl mx-auto bg-gray-800 w-full h-50vh mt-32 mb-24 bg-cover bg-center" 
-    style="background-image:url(https://images.unsplash.com/photo-1556513492-5ecf87648d3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop);">
-
+    <div class="rounded-xl -mx-32 bg-gray-800 h-50vh mt-32 mb-24 bg-cover bg-center" 
+    style="background-image:url(https://images.unsplash.com/photo-1556513492-5ecf87648d3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop);"></div>
+    
+    <div class="flex flex-wrap -mx-32">
+        {% for room in rooms  %}
+            {% include 'partials/room_card.html' with room=room %}
+        {% endfor %}
     </div>
-    {% for room in rooms  %}
 
-        <h3>
-            <a href="{% url "rooms:detail" room.pk %}">
-                {{room.name}} - ${{room.price}}
-            </a>
-        </h3>
+    <h5>
+    {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">❤️</a>
+    {% else %}
+        ❤️
+    {% endif %}
+
+    Page {{page_obj.number}}/{{page_obj.paginator.num_pages}}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">👋</a>
+    {% else %}
+        👋
+    {% endif %}
+    </h5>
+
+    {% for page in page_obj.paginator.page_range %}
+    <a href="?page={{page}}">{{page}}</a>
     {% endfor %}
 
+</div>
 
-<h5>
-{% if page_obj.has_previous %}
-    <a href="?page={{page_obj.previous_page_number}}">❤️</a>
-{% else %}
-    ❤️
-{% endif %}
-
-Page {{page_obj.number}}/{{page_obj.paginator.num_pages}}
-
-{% if page_obj.has_next %}
-    <a href="?page={{page_obj.next_page_number}}">👋</a>
-{% else %}
-    👋
-{% endif %}
-</h5>
-
-{% for page in page_obj.paginator.page_range %}
-    <a href="?page={{page}}">{{page}}</a>
-{% endfor %}
 
 {% endblock content %}
