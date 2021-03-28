@@ -1,7 +1,7 @@
 import os
 import requests
 from django.views import View
-from django.views.generic import FormView
+from django.views.generic import FormView, DetailView
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth import authenticate, login, logout
@@ -11,12 +11,10 @@ from . import forms, models
 
 
 class LoginView(FormView):
-
     template_name = "users/login.html"
     form_class = forms.LoginForm
     success_url = reverse_lazy("core:home")
     # initial = {"email": "cwjcsk@naver.com"}
-
     def form_valid(self, form):
         email = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password")
@@ -207,3 +205,9 @@ def kakao_callback(request):
     except KakaoException as e:
         messages.error(request, e)
         return redirect(reverse("users:login"))
+
+
+class UserProfileView(DetailView):
+
+    model = models.User
+    context_object_name = "user_obj"
