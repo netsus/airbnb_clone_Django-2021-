@@ -39,4 +39,40 @@ form {
         }
     }
 }
+
+@keyframes messageFadeIn {
+    0%{
+        opacity: 0;
+        transform:translateY(-30px) rotateX(0);
+    }
+    20%{
+        opacity: 1;
+        transform:translateY(30px) rotateX(1turn);
+    }
+    80%{
+        opacity: 1;
+        transform:translateY(30px) rotateX(1turn);
+    }
+    100%{
+        opacity: 0;
+        transform:translateY(-30px) rotateX(0);
+    }
+
+}
+
+.message {
+    animation: messageFadeIn 2s ease-in-out forwards;
+    &.error{
+        @apply bg-red-600;
+    }
+    &.info{
+        @apply bg-blue-500;
+    }
+    &.success{
+        @apply bg-green-500;
+    }
+    &.warning{
+        @apply bg-yellow-400;
+    }
+}
 @tailwind utilities;
