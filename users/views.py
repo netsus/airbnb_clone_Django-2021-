@@ -242,7 +242,23 @@ class UpdateProfileView(UpdateView):
         self.object.save()
         return super().form_valid(form)
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=form_class)
+        for field_name in form.fields.keys():
+            form.fields[field_name].widget.attrs = {
+                "placeholder": field_name.capitalize().replace("_", " ")
+            }
+        return form
+
 
 class UpdatePasswordView(PasswordChangeView):
 
     template_name = "users/update-password.html"
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=form_class)
+        for field_name in form.fields.keys():
+            form.fields[field_name].widget.attrs = {
+                "placeholder": field_name.capitalize().replace("_", " ")
+            }
+        return form
