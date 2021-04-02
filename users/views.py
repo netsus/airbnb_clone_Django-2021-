@@ -272,5 +272,5 @@ class UpdatePasswordView(
             }
         return form
 
-    # def get_success_url(self):
-    #     return super().get_success_url()
+    def get_success_url(self):
+        return self.request.get_sucess_url()
