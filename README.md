@@ -56,9 +56,21 @@ npm run css
 2) 브라우저에 보내는 파일은 static/css/styles.css
  --> npm run css : scss에서 작성한 코드를 css로 바꿔주는 명령어
 
- #20.0 Sizes in Tailwind
+#20.0 Sizes in Tailwind
 1. CSS 기초 유닛
 em : 현재 태그에 적용되고 있는 font-size의 배수.
 ex) 가장 가까운 부모의 font-size가 10px이고 em=1 이면, 10px  의미. em=2 이면, 20px의미.
 rem : root에 적용되고 있는 font-size의 배수.
 ex) html에 적용되는 font-size가 10px이고, em=3이면, 30px의미.
+
+
+#21.11 Done with Users!
+django authentication and user management system.
+1. 장고는 강력한 권한 엔진을 가지고있다. -> 유저에게 권한 부여가능. 그룹 생성 후, 그룹 권한 부여 가능
+2. urls.py에 accounts/ url을 urlpattenrs 변수에 추가하면, 장고에 구현되어 있는 로그인 과련 view 들을 사용할 수 있다.
+아래 1) ~ 5)는 모두 accounts/ 뒤에 존재 ex) accounts/login
+ 1) login, logout
+ 2) password_change, password_change/done
+ 3) password_reset, password_reset/done
+ 4) reset/<uidb64>/<token>/ : password 리셋할 때, 장고는 토큰 2개 생성하여 리셋 허용해주는 링크를 메일로 보내준다. 메일에서 링크 클릭하면 
+ 5) reset/done 으로 이동
