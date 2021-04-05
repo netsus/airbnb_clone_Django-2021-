@@ -112,3 +112,8 @@ class Room(core_models.TimeStampedModel):
         except:
             print(self.name)
             pass
+
+    def get_next_four_photos(self):
+        photos = self.photos.all()[1:5]
+        print(photos)
+        return photos
