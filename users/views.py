@@ -23,6 +23,7 @@ class LoginView(mixins.LoggedOutOnlyView, FormView):
         user = authenticate(self.request, username=email, password=password)
         if user is not None:
             login(self.request, user)
+            messages.success(self.request, f"Welcome back {user.first_name}")
         return super().form_valid(form)
 
     def get_success_url(self):
