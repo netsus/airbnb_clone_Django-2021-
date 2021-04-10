@@ -72,7 +72,9 @@
                     <div class="border-section">
                         <div class="mb-3 flex">
                             <div class="">
-                                {% include 'mixins/user_avatar.html' with user=review.user h_and_w='h-10 w-10' text='text-xl' %}
+                                <a href="{{review.user.get_absolute_url}}">
+                                    {% include "mixins/user_avatar.html" with user=review.user h_and_w='h-10 w-10' text='text-xl' %}
+                                </a>
                             </div>
                             <div class="flex flex-col ml-5">
                                 <span class="font-bold">{{review.user.first_name}}</span>
@@ -86,7 +88,11 @@
             </div>
         </div>
     </div>
-    <div class="w-1/3"></div>
+    <div class="w-1/3">
+        {% if room.host == user %}
+            <a href="{% url 'rooms:edit' room.pk %}" class="btn-link block">Edit Room</a>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock content %}
