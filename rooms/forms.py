@@ -34,8 +34,8 @@ class CreatePhotoForm(forms.ModelForm):
         model = models.Photo
         fields = ("caption", "file")
 
-    def save(self, *args, **kwargs):
-        pk = kwargs.get("pk")
+    def save(self, pk, *args, **kwargs):
         photo = super().save(commit=False)
         room = models.Room.objects.get(pk=pk)
-        print(pk)
+        photo.room = room
+        photo.save()
