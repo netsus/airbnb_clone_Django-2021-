@@ -24,7 +24,7 @@ class Calendar(calendar.Calendar):
 
     def get_days(self):
         weeks = self.monthdays2calendar(self.year, self.month)
-        days = [day for day, _ in [week for week in weeks]]
+        days = [day for week in weeks for day, _ in week]
         return days
 
     def get_month(self):
