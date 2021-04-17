@@ -37,17 +37,17 @@ class Calendar(calendar.Calendar):
         now = timezone.now()
         today = now.day
         month = now.month
-        # days = [
-        #     Day(day, (month == self.month) and (day < today))
-        #     for week in weeks
-        #     for day, _ in week
-        # ]
-        ## class 없이 딕셔너리로도 가능하다.
         days = [
-            {"day": day, "past": (month == self.month) and (day < today)}
+            Day(day, (month == self.month) and (day < today))
             for week in weeks
             for day, _ in week
         ]
+        # ## class 없이 딕셔너리로도 가능하다.
+        # days = [
+        #     {"day": day, "past": (month == self.month) and (day < today)}
+        #     for week in weeks
+        #     for day, _ in week
+        # ]
         return days
 
     def get_month(self):
