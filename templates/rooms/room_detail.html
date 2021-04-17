@@ -1,4 +1,5 @@
 {% extends "base.html" %} 
+{% load capitals %}
 
 {% block page_title %}
     {{room.name}}
@@ -92,6 +93,7 @@
         {% if room.host == user %}
             <a href="{% url 'rooms:edit' room.pk %}" class="btn-link block">Edit Room</a>
         {% else %}
+        {{'something'|sexy_capitals}}
             {% if not request.session.is_hosting %}
                 
                 {% for calendar in room.get_calendars  %}
