@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.utils import timezone
 from core import models as core_models
@@ -54,16 +55,20 @@ class Reservation(core_models.TimeStampedModel):
     is_finished.boolean = True
 
     def save(self, *args, **kwargs):
-        if 1:  # self.pk is None:
+        if self.pk is None:  # 생성하려는 모델이 새로운 거 일 때
             start = self.check_in
             end = self.check_out
             difference = end - start
-            existing_booked_day = BookedDay.objects.filter(
-                day__range=(start, end)
-            ).exists()
-            if existing_booked_day == False:
+            existing_booked_day = BookedDay.objects.filter(  # start와 end사이에 BookedDay 존재하는지. filter => DB의 where
+                day__range=(start, end)  # range로 filter 하는 방법
+            ).exists()  # 존재 여부 확인
+            if not existing_booked_day:
                 print("Can Booking!")
-            print(difference)
-        # else:
-        # print("im old")
+                super().save(
+                    *args, **kwargs
+                )  # reservation저장을 해놔야, 아래 BookedDay.objects.create에 reservation을 FK로 BookedDay 저장이 가능하기 때문
+                for i in range(difference.days + 1):
+                    day = start + datetime.timedelta(days=i)
+                    BookedDay.objects.create(day=day, reservation=self)
+                return
         return super().save(*args, **kwargs)  # Call the real save() method
