@@ -74,3 +74,9 @@ django authentication and user management system.
  3) password_reset, password_reset/done
  4) reset/<uidb64>/<token>/ : password 리셋할 때, 장고는 토큰 2개 생성하여 리셋 허용해주는 링크를 메일로 보내준다. 메일에서 링크 클릭하면 
  5) reset/done 으로 이동
+
+#24.8 Calendar and BookedDay Recap
+BookedDay 클래스를 활용해 예약한 시간을 저장하고, 검토하여 예약 날짜 겹치지 않도록 조절.
+__ : Foreign Key 사용하는 방법
+ex) reservation_models.BookedDay.objects.get(day=date, reservation__room=room)
+--> reservation 클래스에서 objects.get을 이용하여 room(FK)에 해당하는 예약을 가져오도록함
