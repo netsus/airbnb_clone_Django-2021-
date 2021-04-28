@@ -75,7 +75,7 @@ class Reservation(core_models.TimeStampedModel):
                 super().save(
                     *args, **kwargs
                 )  # reservation저장을 해놔야, 아래 BookedDay.objects.create에 reservation을 FK로 BookedDay 저장이 가능하기 때문
-                for i in range(difference.days + 1):
+                for i in range(difference.days):
                     day = start + datetime.timedelta(days=i)
                     BookedDay.objects.create(day=day, reservation=self)
                 return
