@@ -32,22 +32,27 @@
                     <a href="#" class="font-semibold text-green-500">Send a Message</a>
                 </div>
             </div>
-
-            <div class="py-10 px-5 flex items-center">  
-                {% if reservation.status == 'pending' %}
-                    <a href="{% url 'reservations:edit' reservation.pk 'cancel' %}" class="btn-link block px-3">Cancel Reservation</a>
-                    {% if reservation.room.host == user %}
-                        <a href="{% url 'reservations:edit' reservation.pk 'confirm' %}" class="btn-link block px-3">Confirm Reservation</a>
-                    {% endif %}
+            
+            <div class="py-10 px-5">  
+            {% if reservation.status != 'canceled' %}
+                {% if reservation.status == 'confirmed' and reservation.is_finished %}
+                    <!-- 예약이 확정됬고 동시에 체크아웃 이후인 경우 -->
+                    <span class="font-semibold text-2xl text-center w-full block mb-5">Write Review</span>
+                    <form action="{% url 'reviews:create' reservation.room.pk %}" method="POST" class="w-1/2 mx-auto">
+                        {% csrf_token %}
+                        {{form}}
+                        <button class="btn-link mt-5">Submit Review</button>
+                    </form>
+                {% else %}
+                        {% if reservation.status == 'pending' %}
+                            <a href="{% url 'reservations:edit' reservation.pk 'cancel' %}" class="btn-link block px-3">Cancel Reservation</a>
+                            {% if reservation.room.host == user %}
+                                <a href="{% url 'reservations:edit' reservation.pk 'confirm' %}" class="btn-link block px-3">Confirm Reservation</a>
+                            {% endif %}
+                        {% endif %}
                 {% endif %}
-                
-                    
-                
-                     
-                    
+            {% endif %}
             </div>
         </div>
-
-
     </div>
 {% endblock content %}
