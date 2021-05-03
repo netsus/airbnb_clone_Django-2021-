@@ -19,12 +19,12 @@ msgstr ""
 
 #: templates/base.html:24
 msgid "Search by City"
-msgstr ""
+msgstr "도시 찾기"
 
 #: templates/partials/footer.html:4
 msgid "Have a nice day."
-msgstr ""
+msgstr "좋은 하루 되세요."
 
 #: templates/partials/footer.html:6
 msgid "All rights reserved"
-msgstr ""
+msgstr "모든 권한은 나에게 있다"
