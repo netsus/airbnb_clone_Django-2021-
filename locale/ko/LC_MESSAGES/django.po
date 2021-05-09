@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-09 16:29+0900\n"
+"POT-Creation-Date: 2021-05-10 00:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,3 +34,55 @@ msgstr "모든 권한은 나에게 있다"
 #, python-format
 msgid "Page %(current_page)s of %(total_pages)s"
 msgstr "페이지 %(current_page)s / %(total_pages)s"
+
+#: users/mixins.py:13 users/mixins.py:25
+msgid "Can't go there"
+msgstr "이동할 수 없습니다"
+
+#: users/models.py:20
+msgid "Male"
+msgstr "남성"
+
+#: users/models.py:21
+msgid "Female"
+msgstr "여성"
+
+#: users/models.py:22
+msgid "Other"
+msgstr "그 외"
+
+#: users/models.py:29
+msgid "English"
+msgstr "영어"
+
+#: users/models.py:30
+msgid "Korean"
+msgstr "한국어"
+
+#: users/models.py:48
+msgid "avatar"
+msgstr "아바타 사진"
+
+#: users/models.py:50
+msgid "gender"
+msgstr "성별"
+
+#: users/models.py:52
+msgid "bio"
+msgstr "설명"
+
+#: users/models.py:53
+msgid "birthdate"
+msgstr "생일"
+
+#: users/models.py:55
+msgid "language"
+msgstr "언어"
+
+#: users/models.py:62
+msgid "currency"
+msgstr "화폐"
+
+#: users/models.py:86
+msgid "Verify Airbnb Account"
+msgstr "AirBnB 계정 확인"
