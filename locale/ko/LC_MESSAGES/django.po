@@ -33,4 +33,4 @@ msgstr "모든 권한은 나에게 있다"
 #: templates/rooms/room_list.html:29
 #, python-format
 msgid "Page %(current_page)s of %(total_pages)s"
-msgstr ""
+msgstr "페이지 %(current_page)s / %(total_pages)s"
