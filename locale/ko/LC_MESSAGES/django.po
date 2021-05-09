@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-08 20:14+0900\n"
+"POT-Creation-Date: 2021-05-09 16:29+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,15 @@ msgstr ""
 msgid "Search by City"
 msgstr "도시 찾기"
 
-#: templates/partials/footer.html:4
+#: templates/partials/footer.html:5
 msgid "Have a nice day."
 msgstr "좋은 하루 되세요."
 
-#: templates/partials/footer.html:6
+#: templates/partials/footer.html:7
 msgid "All rights reserved"
 msgstr "모든 권한은 나에게 있다"
+
+#: templates/rooms/room_list.html:29
+#, python-format
+msgid "Page %(current_page)s of %(total_pages)s"
+msgstr ""
