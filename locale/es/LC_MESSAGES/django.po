@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-03 00:09+0900\n"
+"POT-Creation-Date: 2021-05-15 17:44+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,107 @@ msgstr ""
 msgid "Search by City"
 msgstr ""
 
-#: templates/partials/footer.html:4
+#: templates/partials/footer.html:5
 msgid "Have a nice day."
 msgstr ""
 
-#: templates/partials/footer.html:6
+#: templates/partials/footer.html:7
 msgid "All rights reserved"
+msgstr ""
+
+#: templates/partials/nav.html:9
+msgid "Stop hosting"
+msgstr ""
+
+#: templates/partials/nav.html:11
+msgid "Start hosting"
+msgstr ""
+
+#: templates/partials/nav.html:18
+msgid "Create Room"
+msgstr ""
+
+#: templates/partials/nav.html:20
+msgid "Fav"
+msgstr ""
+
+#: templates/partials/nav.html:21
+msgid "Profile"
+msgstr ""
+
+#: templates/partials/nav.html:22
+msgid "Log out"
+msgstr ""
+
+#: templates/partials/nav.html:24
+msgid "Log in"
+msgstr ""
+
+#: templates/partials/nav.html:25
+msgid "Sign Up"
+msgstr ""
+
+#: templates/rooms/room_detail.html:32
+msgid "Remove from Favorites"
+msgstr ""
+
+#: templates/rooms/room_detail.html:34
+msgid "Save to Favorites"
+msgstr ""
+
+#: templates/rooms/room_list.html:29
+#, python-format
+msgid "Page %(current_page)s of %(total_pages)s"
+msgstr ""
+
+#: users/mixins.py:13 users/mixins.py:25
+msgid "Can't go there"
+msgstr ""
+
+#: users/models.py:20
+msgid "Male"
+msgstr ""
+
+#: users/models.py:21
+msgid "Female"
+msgstr ""
+
+#: users/models.py:22
+msgid "Other"
+msgstr ""
+
+#: users/models.py:29
+msgid "English"
+msgstr ""
+
+#: users/models.py:30
+msgid "Korean"
+msgstr ""
+
+#: users/models.py:48
+msgid "avatar"
+msgstr ""
+
+#: users/models.py:50
+msgid "gender"
+msgstr ""
+
+#: users/models.py:52
+msgid "bio"
+msgstr ""
+
+#: users/models.py:53
+msgid "birthdate"
+msgstr ""
+
+#: users/models.py:55
+msgid "language"
+msgstr ""
+
+#: users/models.py:62
+msgid "currency"
+msgstr ""
+
+#: users/models.py:86
+msgid "Verify Airbnb Account"
 msgstr ""

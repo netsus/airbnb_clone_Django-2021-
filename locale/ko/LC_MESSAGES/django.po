@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-10 00:14+0900\n"
+"POT-Creation-Date: 2021-05-15 17:44+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,46 @@ msgstr "좋은 하루 되세요."
 #: templates/partials/footer.html:7
 msgid "All rights reserved"
 msgstr "모든 권한은 나에게 있다"
+
+#: templates/partials/nav.html:9
+msgid "Stop hosting"
+msgstr "게스트 하기"
+
+#: templates/partials/nav.html:11
+msgid "Start hosting"
+msgstr "호스트 하기"
+
+#: templates/partials/nav.html:18
+msgid "Create Room"
+msgstr "방만들기"
+
+#: templates/partials/nav.html:20
+msgid "Fav"
+msgstr "찜목록"
+
+#: templates/partials/nav.html:21
+msgid "Profile"
+msgstr "프로필"
+
+#: templates/partials/nav.html:22
+msgid "Log out"
+msgstr "로그아웃"
+
+#: templates/partials/nav.html:24
+msgid "Log in"
+msgstr "로그인"
+
+#: templates/partials/nav.html:25
+msgid "Sign Up"
+msgstr "회원가입"
+
+#: templates/rooms/room_detail.html:32
+msgid "Remove from Favorites"
+msgstr "🤍 찜목록 제거"
+
+#: templates/rooms/room_detail.html:34
+msgid "Save to Favorites"
+msgstr "❤ 찜목록 추가"
 
 #: templates/rooms/room_list.html:29
 #, python-format
