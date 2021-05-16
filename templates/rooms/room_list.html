@@ -37,10 +37,16 @@ Home
         <i class="fas fa-arrow-right fa-lg"></i>
     {% endif %}
     </div>
-
+    <div class="flex items-center justify-center mx-auto mt-5 mb-5  container">
+        <div class="">
     {% for page in page_obj.paginator.page_range %}
-    <a href="?page={{page}}">{{page}}</a>
+        {% if page == page_obj.number %}
+            <a href="?page={{page}}" class="mr-2 text-red-400">{{page}}</a>
+        {% else %}
+            <a href="?page={{page}}" class="mr-2">{{page}}</a>
+        {% endif %}
     {% endfor %}
+    </div>
 
 </div>
 
