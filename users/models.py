@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from django.utils.html import strip_tags
 from django.shortcuts import reverse
 from django.template.loader import render_to_string
-from core import models as core_models
+from core import managers as core_managers
 
 # Create your models here.
 class User(AbstractUser):
@@ -45,6 +45,8 @@ class User(AbstractUser):
         (LOGIN_GH, "Github"),
         (LOGIN_KAKAO, "Kakao"),
     )
+
+    objects = core_managers.CustomModelManager()
 
     avatar = models.ImageField(_("avatar"), upload_to="avatars", blank=True)
     gender = models.CharField(
