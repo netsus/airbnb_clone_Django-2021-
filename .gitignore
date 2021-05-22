@@ -141,3 +141,8 @@ cython_debug/
 uploads
 # Assignment.txt
 node_modules
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
