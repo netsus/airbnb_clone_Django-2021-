@@ -12,6 +12,7 @@ django-dotenv = "*"
 requests = "*"
 python-gettext = "*"
 django-extensions = "*"
+pipenv-to-requirements = "*"
 
 [dev-packages]
 black = "*"
