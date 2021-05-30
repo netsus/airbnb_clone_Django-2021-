@@ -5,7 +5,7 @@ branch-defaults:
 global:
   application_name: airbnb
   branch: null
-  default_ec2_keyname: zetazone
+  default_ec2_keyname: cwjcsk
   default_platform: Python 3.8 running on 64bit Amazon Linux 2
   default_region: ap-northeast-2
   include_git_submodules: true
